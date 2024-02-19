@@ -5,22 +5,21 @@ const userSchema = new mongoose.Schema(
         name: {
             type: String,
             required: true,
+            unique: true,
             min: 3,
             max: 50
+        },
+        hash: {
+            type: String,
+            require: true
+        },
+        uuid: {
+            type: String,
+            required: true,
         },
         role: {
             type: Number,
             default: 0,
-        },
-        oidc: {
-            provider: {
-                type: String,
-                required: true
-            },
-            sub: {
-                type: String,
-                required: true
-            }
         },
         pictue: {
             type: String,
@@ -32,6 +31,12 @@ const userSchema = new mongoose.Schema(
     }
 )
 
-const user = mongoose.model("user", userSchema)
+export const user = mongoose.model("user", userSchema)
 
-export default user
+export function getUserByName(username: String) {
+    return user.findOne({ name: username })
+        .then((user: any) => user)
+        .catch((error) => {
+            throw error;
+        });
+}
