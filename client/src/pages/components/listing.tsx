@@ -3,11 +3,20 @@ import { useCookies } from "react-cookie";
 import { parseJwt } from "../../jwtDecode";
 import "./listing.css";
 
-function EditButton(props) {
-  return <button className="editButton">Edit</button>;
+function EditButton(props: any) {
+  return (
+    <button
+      className="editButton"
+      onClick={() => {
+        document.location.href = `/editor/${props.id}`;
+      }}
+    >
+      Edit
+    </button>
+  );
 }
 
-export function Listing(props) {
+export function Listing(props: any) {
   const [cookies, _] = useCookies(["user"]);
 
   const admin =
@@ -17,9 +26,15 @@ export function Listing(props) {
 
   return (
     <div className="articleListing">
-      <div className="atitle">{props.title}</div>
-      <img className="image" src={props.img} />
-      {admin ? <></> : <EditButton />}
+      <div
+        onClick={() => {
+          document.location.href = `/article/${props.id}`;
+        }}
+      >
+        <div className="atitle">{props.title}</div>
+        <img className="image" src={props.img} />
+      </div>
+      {admin ? <EditButton id={props.id} /> : <></>}
     </div>
   );
 }

@@ -1,5 +1,4 @@
-import { error } from 'console';
-import { user, getUserByName } from '../models/user'
+import { user } from '../models/user'
 import { generateToken } from './jwtUtils';
 
 const bcrypt = require('bcrypt');

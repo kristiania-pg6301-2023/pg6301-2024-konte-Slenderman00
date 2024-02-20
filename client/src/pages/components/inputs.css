@@ -7,12 +7,52 @@
     width: 960px;
 }
 
+.generic-input-container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+
 .article-input-container .atitle {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-style: normal;
 
     width: 80%;
+    background-color: #d1d1d1;
+    border: 1px solid #979797;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.generic-input-container .ageneric{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    width: 83%;
+    background-color: #d1d1d1;
+    border: 1px solid #979797;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.generic-input-container .ageneric-large{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    resize: none;
+    width: 83%;
     background-color: #d1d1d1;
     border: 1px solid #979797;
     padding: 14px 20px;
@@ -69,6 +109,25 @@
 }
 
 .article-input-container .abutton:hover {
+    background-color: #9c9c9c;
+}
+
+.generic-input-container .abutton-generic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    width: 90%;
+    background-color: #d1d1d1;
+    border: 1px solid #979797;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.generic-input-container .abutton-generic:hover {
     background-color: #9c9c9c;
 }
 

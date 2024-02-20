@@ -1,0 +1,36 @@
+.authorContainer {
+    top: 50px;
+    grid-column: 2;
+    display: flex;
+    position: relative;
+    border-radius: 5px;
+    background-color: #0000000c;
+    width: 90%;
+    height: 100%;
+    padding: 20px;
+    margin: auto;
+    height: 230px;
+}
+
+.authorContainer .content {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+}
+
+.authorContainer .content .name {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    font-size: 35px;
+}
+
+.authorContainer .content .bio {
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    font-size: 15px;
+}

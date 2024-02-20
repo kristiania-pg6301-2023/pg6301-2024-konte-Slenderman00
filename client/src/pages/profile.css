@@ -1,0 +1,31 @@
+.editProfileBox {
+    grid-column: 2;
+}
+
+.editProfileBox .internal {
+    display: flex;
+    position: relative;
+    top: 150px;
+    border-radius: 5px;
+    background-color: #0000000c;
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    margin: auto;
+    height: 230px;
+}
+
+.editProfileBox .internal .textInputs {
+    width: 100%;
+}
+
+.editProfileBox .internal .nameBox {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+
+    height: 30px;
+    width: 86%;
+    margin: auto;
+}

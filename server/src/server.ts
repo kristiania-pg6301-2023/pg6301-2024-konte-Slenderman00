@@ -6,7 +6,12 @@ import mongoose from "mongoose";
 import registerUser from "./secureUserSystem/register";
 import loginUser from "./secureUserSystem/login";
 
+import { createArticle, updateArticle } from "./goodArticleSystem/article";
+
 import { cookieMan } from "./secureUserSystem/cookieMan";
+import { getArticles, getArticle } from "./models/article";
+import { getUserByUUID } from "./models/user";
+import { updateUser } from "./secureUserSystem/update";
 
 var cors = require('cors');
 
@@ -63,21 +68,76 @@ registerRouter.post('/', (req, res) => {
     }
 });
 
+const articlesRouter = express.Router();
 const articleRouter = express.Router();
-articleRouter.use(cookieMan);
 
+//note cookieman verifies the server signed jwt, thus all token data should be trustworthy
+articleRouter.use(cookieMan);
 articleRouter.post('/create', (req: any, res) => {
     if(req.user.role == 1) {
-        console.log("YEETRS SKEETERS");
+        if("title" in req.body && "content" in req.body && "category" in req.body && "imgurl" in req.body) {
+            createArticle(req.body.title, req.body.content, req.body.category, req.body.imgurl, req.user.uuid, (result: any) => {
+                res.send(result);
+            })
+        }
     } else {
-        console.log("NJEEET");
+        console.log(req.user)
+        res.send({error: 'Something went wrong.'})
     }
 })
+
+articleRouter.post('/update', (req: any, res) => {
+    if(req.user.role == 1) {
+        if("title" in req.body && "content" in req.body && "category" in req.body && "imgurl" in req.body && 'id' in req.body) {
+            updateArticle(req.body.title, req.body.content, req.body.category, req.body.imgurl, req.body.id, (result: any) => {
+                res.send(result);
+            })
+        }
+    } else {
+        console.log(req.user)
+        res.send({error: 'Something went wrong.'})
+    }
+})
+
+articleRouter.get('/id/:id', (req: any, res) => {
+    if('id' in req.params) {
+        getArticle(req.params.id).then((result: any) => {
+            res.send(result);
+        })   
+    }
+});
+
+articlesRouter.get('/', (req: any, res) => {
+    getArticles().then((result: any) => {
+        res.send(result);
+    });
+});
+
+const profileRouter = express.Router();
+profileRouter.use(cookieMan);
+
+profileRouter.get('/', (req: any, res) => {
+    if('uuid' in req.user) {
+        getUserByUUID(req.user.uuid).then((result) => {
+            res.send({'success': {name: result.name, bio: result.bio, picture: result.picture}});
+        })
+    }
+});
+
+profileRouter.post('/update', (req: any, res) => {
+    if('uuid' in req.user && 'bio' in req.body && 'picture' in req.body) {
+        updateUser(req.user.uuid, req.body.bio, req.body.picture, (result: any) => {
+            res.send(result);
+        });
+    }
+});
 
 //nested routing
 apiRouter.use('/login', loginRouter);
 apiRouter.use('/register', registerRouter);
 apiRouter.use('/article', articleRouter);
+apiRouter.use('/articles', articlesRouter);
+apiRouter.use('/profile', profileRouter)
 
 
 app.use('/api', apiRouter);

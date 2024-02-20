@@ -11,7 +11,7 @@ function loginUser(username: String, password: String, callback: any) {
         bcrypt.compare(password, user.hash, (err: any, result: any) => {
             if(result) {
                 const uuid = user.uuid;
-                const _jwt = generateToken(uuid, 0, user.name);
+                const _jwt = generateToken(uuid, user.role, user.name);
 
                 //generate token and shit
                 callback({'success': {'uuid': uuid, 'jwt': _jwt}});
