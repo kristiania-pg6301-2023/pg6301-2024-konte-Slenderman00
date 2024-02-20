@@ -33,7 +33,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(cookieMan);
 
 app.get('/', (req, res) => {
     res.send("hello world");
@@ -64,9 +63,23 @@ registerRouter.post('/', (req, res) => {
     }
 });
 
+const articleRouter = express.Router();
+articleRouter.use(cookieMan);
+
+articleRouter.post('/create', (req: any, res) => {
+    if(req.user.role == 1) {
+        console.log("YEETRS SKEETERS");
+    } else {
+        console.log("NJEEET");
+    }
+})
+
 //nested routing
 apiRouter.use('/login', loginRouter);
 apiRouter.use('/register', registerRouter);
+apiRouter.use('/article', articleRouter);
+
+
 app.use('/api', apiRouter);
 
 

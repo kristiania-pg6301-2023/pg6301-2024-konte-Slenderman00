@@ -1,0 +1,74 @@
+.article-input-container {
+    grid-column: 2;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 960px;
+}
+
+.article-input-container .atitle {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    width: 80%;
+    background-color: #d1d1d1;
+    border: 1px solid #979797;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.article-input-container .atext {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    width: 80%;
+    background-color: #d1d1d1;
+    border: 1px solid #979797;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 500px;
+}
+
+.article-input-container .aselect {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    
+    width: 84%;
+    background-color: #d1d1d1;
+    border: 1px solid #979797;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.article-input-container .abutton {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    width: 84%;
+    background-color: #d1d1d1;
+    border: 1px solid #979797;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.article-input-container .abutton:hover {
+    background-color: #9c9c9c;
+}
+

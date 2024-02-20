@@ -1,5 +1,5 @@
 import { user, getUserByName } from '../models/user'
-import { generateToken } from './jwtGen';
+import { generateToken } from './jwtUtils';
 
 const bcrypt = require('bcrypt');
 

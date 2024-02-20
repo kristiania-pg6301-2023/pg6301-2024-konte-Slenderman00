@@ -5,6 +5,15 @@
     grid-template-columns: auto 960px auto;
 }
 
+.grid-article {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-column: 2;
+    grid-row: 3;
+    grid-template-columns: auto auto auto;
+}
+
 .grid-centerbox {
     width: 100%;
     height: 100%;

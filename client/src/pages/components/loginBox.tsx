@@ -1,42 +1,52 @@
-import { useState } from 'react';
-import { useCookies } from 'react-cookie';
+import { useState } from "react";
+import { useCookies } from "react-cookie";
 
 import { TextInput } from "./textInput";
-import { doLogin } from '../../api';
-import { parseJwt } from '../../jwtDecode';
+import { doLogin } from "../../api";
+import { parseJwt } from "../../jwtDecode";
 
-import './box.css'
-
+import "./box.css";
 
 export function LoginBox() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-    const [cookies, setCookie] = useCookies(['user'])
+  const [_, setCookie] = useCookies(["user"]);
 
-    const onSubmit = (event: any) => {
-        //this makes the user able to interact with this as a normal form.
-        event.preventDefault()
+  const onSubmit = (event: any) => {
+    //this makes the user able to interact with this as a normal form.
+    event.preventDefault();
 
-        //use api methods and then generate session cookie
-        doLogin(username, password, (result: any) => {
-            console.log(result);
-            if ("success" in result) {
-                console.log(parseJwt(result.success.jwt))
-                setCookie('user', result.success.jwt, { path: '/' })
-                //redirect the user to the index
-                window.location.href = "/"
-            }
-        })
-    }
+    //use api methods and then generate session cookie
+    doLogin(username, password, (result: any) => {
+      console.log(result);
+      if ("success" in result) {
+        console.log(parseJwt(result.success.jwt));
+        setCookie("user", result.success.jwt, { path: "/" });
+        //redirect the user to the index
+        window.location.href = "/";
+      }
+    });
+  };
 
-    return (
-        <div className="loginBox">
-            <form onSubmit={onSubmit}>
-                <TextInput name="Username" onChange={(e: any) => { setUsername(e.target.value) }} />
-                <TextInput name="Password" isPassword={true} onChange={(e: any) => { setPassword(e.target.value) }} />
-                <input value={"Login"} type='submit' />
-            </form>
-        </div>
-    )
+  return (
+    <div className="loginBox">
+      <form onSubmit={onSubmit}>
+        <TextInput
+          name="Username"
+          onChange={(e: any) => {
+            setUsername(e.target.value);
+          }}
+        />
+        <TextInput
+          name="Password"
+          isPassword={true}
+          onChange={(e: any) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <input value={"Login"} type="submit" />
+      </form>
+    </div>
+  );
 }

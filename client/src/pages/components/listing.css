@@ -1,0 +1,46 @@
+.articleListing {
+    position: relative;
+    top: 50px;
+    border-radius: 5px;
+    background-color: #0000000c;
+    padding: 20px;
+    margin: 10px;
+}
+
+.articleListing .atitle {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    margin: auto;
+    width: auto;
+}
+
+.articleListing .image {
+    position: relative;
+    top: 10px;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+.articleListing .editButton {
+    margin-top: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    background-color: #3333337a;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.articleListing .editButton:hover {
+    background-color: #333;
+}

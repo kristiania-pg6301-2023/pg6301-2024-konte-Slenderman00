@@ -1,11 +1,9 @@
-import './grid.css'
+import "./grid.css";
 
-function Grid(props: any) {
-    return (
-        <div className="grid-container">
-            {props.children}
-        </div>
-    );
+export function Grid(props: any) {
+  return <div className="grid-container">{props.children}</div>;
 }
 
-export default Grid;
+export function ArticleGrid(props: any) {
+  return <div className="grid-article">{props.children}</div>;
+}
