@@ -12,7 +12,7 @@ function registerUser(username: String, password: String, callback: any) {
 
             //create the user, generate a uid token and call the callback
             const uuid = crypto.randomUUID();
-            const _jwt = generateToken(uuid, 0);
+            const _jwt = generateToken(uuid, 0, username);
 
             const u1 = new user({
                 name: username,

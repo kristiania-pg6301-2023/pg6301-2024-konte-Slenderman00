@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { useCookies } from 'react-cookie';
 
 import { TextInput } from "./textInput";
-import { doLogin } from '../../api';
+import { doRegister } from '../../api';
 import { parseJwt } from '../../jwtDecode';
 
 import './box.css'
 
 
-export function LoginBox() {
+export function RegisterBox() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -19,7 +19,7 @@ export function LoginBox() {
         event.preventDefault()
 
         //use api methods and then generate session cookie
-        doLogin(username, password, (result: any) => {
+        doRegister(username, password, (result: any) => {
             console.log(result);
             if ("success" in result) {
                 console.log(parseJwt(result.success.jwt))
