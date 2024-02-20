@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema(
         },
         hash: {
             type: String,
-            require: true
+            required: true
         },
         uuid: {
             type: String,
