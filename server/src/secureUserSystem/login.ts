@@ -22,6 +22,9 @@ function loginUser(username: String, password: String, callback: any) {
                 console.log(result)
             }
         })
+    }).catch(err => {
+        //generate error and shit
+        callback({ 'error': 'Something went wrong' });
     })
 }
 

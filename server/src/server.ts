@@ -6,6 +6,8 @@ import mongoose from "mongoose";
 import registerUser from "./secureUserSystem/register";
 import loginUser from "./secureUserSystem/login";
 
+var cors = require('cors');
+
 const path = require('path')
 
 dotenv.config({path: path.resolve(__dirname, '../../secret.env')})
@@ -18,7 +20,8 @@ const port = process.env.PORT || 3000;
 
 //middleware must be asserted before the routes.
 app.use(cookieParser());
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send("hello world");

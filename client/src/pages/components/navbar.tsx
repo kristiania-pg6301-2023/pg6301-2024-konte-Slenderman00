@@ -28,7 +28,7 @@ function Navbar(props: any) {
             </div>
             <NavbarLogo/>
             <div className='sub-container'>
-                <NavbarButton href='/' name='LOGIN' isActive={currentRoute === '/login'}/>
+                <NavbarButton href='/login' name='LOGIN' isActive={currentRoute === '/login'}/>
             </div>
         </div>
     )
