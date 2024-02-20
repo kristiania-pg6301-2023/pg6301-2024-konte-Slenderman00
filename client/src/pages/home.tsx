@@ -1,6 +1,7 @@
 import { Grid } from "./components/grid";
 import Navbar from "./components/navbar";
 import { ArticleText, ArticleTitle } from "./components/article";
+import { RecommendedArticles } from "./components/recommendedArticles";
 
 function Home() {
   return (
@@ -53,6 +54,7 @@ function Home() {
         with us on social media using <b>#FlatEarthFanatic</b>. And lastly, keep
         an open mind as you explore the many facets of our flat world!
       </ArticleText>
+      <RecommendedArticles />
     </Grid>
   );
 }

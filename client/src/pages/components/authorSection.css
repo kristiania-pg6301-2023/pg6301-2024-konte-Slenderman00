@@ -5,11 +5,12 @@
     position: relative;
     border-radius: 5px;
     background-color: #0000000c;
-    width: 90%;
+    width: 94%;
     height: 100%;
     padding: 20px;
     margin: auto;
     height: 230px;
+    margin-bottom: 30px;
 }
 
 .authorContainer .content {

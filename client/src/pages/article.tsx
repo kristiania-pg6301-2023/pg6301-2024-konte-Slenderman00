@@ -7,6 +7,8 @@ import { getArticle } from "../api";
 import { useParams } from "react-router-dom";
 
 import { AuthorSection } from "./components/authorSection";
+import { RecommendedArticles } from "./components/recommendedArticles";
+
 
 function Article() {
   const { id } = useParams();
@@ -24,6 +26,7 @@ function Article() {
       <ArticleTitle>{article.title}</ArticleTitle>
       <ArticleText>{article.content}</ArticleText>
       <AuthorSection name={article.authorName} bio={article.authorBio}  picture={article.authorImage}/>
+      <RecommendedArticles/>
     </Grid>
   );
 }
