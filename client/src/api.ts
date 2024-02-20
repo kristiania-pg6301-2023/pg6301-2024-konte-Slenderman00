@@ -1,13 +1,14 @@
 
 
-const ENDPOINT = "http://127.0.0.1:3000";
+const ENDPOINT = "http://localhost:3000";
 
 function postData(path: string, data: any, callback: any) {
     fetch(`${ENDPOINT}${path}`, {
         method: "POST", headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        credentials: "include",
     }).then((result: any) => {
         result.json().then((result: any) => {
             callback(result)

@@ -6,6 +6,8 @@ import mongoose from "mongoose";
 import registerUser from "./secureUserSystem/register";
 import loginUser from "./secureUserSystem/login";
 
+import { cookieMan } from "./secureUserSystem/cookieMan";
+
 var cors = require('cors');
 
 const path = require('path')
@@ -21,7 +23,17 @@ const port = process.env.PORT || 3000;
 //middleware must be asserted before the routes.
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors());
+
+//this will allow all origins, it is fine for this website.
+const corsOptions = {
+    credentials: true,
+    origin: (origin: any, callback: any) => {
+        callback(null, true);
+    }
+};
+
+app.use(cors(corsOptions));
+app.use(cookieMan);
 
 app.get('/', (req, res) => {
     res.send("hello world");
