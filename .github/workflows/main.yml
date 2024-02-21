@@ -31,7 +31,6 @@ jobs:
       - name: Copy index.html to 404.html
         run: cp ./client/dist/index.html ./client/dist/404.html
 
-
   deploy:
     name: Deploy
     needs: build
@@ -50,3 +49,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./client/dist
+          
+      - name: Copy index.html to 404.html
+        run: cp ./client/dist/index.html ./client/dist/404.html
