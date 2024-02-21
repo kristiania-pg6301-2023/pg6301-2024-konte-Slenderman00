@@ -1,4 +1,4 @@
-const ENDPOINT = "https://the-flat-earther-tribune-e93e502a5a83.herokuapp.com/api/articles"; //"http://localhost:3000";
+const ENDPOINT = "https://the-flat-earther-tribune-e93e502a5a83.herokuapp.com"; //"http://localhost:3000";
 
 function postData(path: string, data: any, callback: any) {
   fetch(`${ENDPOINT}${path}`, {
