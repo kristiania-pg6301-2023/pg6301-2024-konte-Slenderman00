@@ -36,9 +36,9 @@ function Navbar(props: any) {
   return (
     <div className="navbar-container">
       <div className="sub-container">
-        <NavbarButton href="/" name="HOME" isActive={currentRoute === "/"} />
+        <NavbarButton href="/pg6301-2024-konte-Slenderman00/" name="HOME" isActive={currentRoute === "/"} />
         <NavbarButton
-          href="/news"
+          href="/pg6301-2024-konte-Slenderman00/news"
           name="NEWS"
           isActive={currentRoute === "/news"}
         />
@@ -48,21 +48,21 @@ function Navbar(props: any) {
         {cookies.user ? (
           <>
             <NavbarButton
-              href="/profile"
+              href="/pg6301-2024-konte-Slenderman00/profile"
               name={username}
               isActive={currentRoute === "/profile"}
             />
-            <NavbarButton href="/logout" name="LOGOUT" isActive={false} />
+            <NavbarButton href="/pg6301-2024-konte-Slenderman00/logout" name="LOGOUT" isActive={false} />
           </>
         ) : (
           <>
             <NavbarButton
-              href="/login"
+              href="/pg6301-2024-konte-Slenderman00/login"
               name="LOGIN"
               isActive={currentRoute === "/login"}
             />
             <NavbarButton
-              href="/register"
+              href="/pg6301-2024-konte-Slenderman00/register"
               name="REGISTER"
               isActive={currentRoute === "/register"}
             />

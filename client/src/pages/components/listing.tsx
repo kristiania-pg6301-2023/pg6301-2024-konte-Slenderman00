@@ -8,7 +8,7 @@ function EditButton(props: any) {
     <button
       className="editButton"
       onClick={() => {
-        document.location.href = `/editor/${props.id}`;
+        document.location.href = `/pg6301-2024-konte-Slenderman00/editor/${props.id}`;
       }}
     >
       Edit
@@ -28,7 +28,7 @@ export function Listing(props: any) {
     <div className="articleListing">
       <div
         onClick={() => {
-          document.location.href = `/article/${props.id}`;
+          document.location.href = `/pg6301-2024-konte-Slenderman00/article/${props.id}`;
         }}
       >
         <div className="atitle">{props.title}</div>

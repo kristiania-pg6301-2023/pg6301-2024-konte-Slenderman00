@@ -29,7 +29,7 @@ function Articles() {
       {admin ? (
         <button
           onClick={() => {
-            window.location.href = "/editor/new";
+            window.location.href = "/pg6301-2024-konte-Slenderman00/editor/new";
           }}
           className="newArticle"
         >
