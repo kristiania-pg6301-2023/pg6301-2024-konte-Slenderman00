@@ -53,6 +53,7 @@ const loginRouter = express.Router();
 loginRouter.post('/', (req, res) => {
     if("username" in req.body && "password" in req.body) {
         loginUser(req.body.username, req.body.password, (result: any) => {
+            res.cookie('user', result.success.jwt, { secure: true, sameSite: 'none' });
             res.send(result);
         })
     }
@@ -63,6 +64,7 @@ registerRouter.post('/', (req, res) => {
     if("username" in req.body && "password" in req.body) {
         //all fields have been submitted
         registerUser(req.body.username, req.body.password, (result: any) => {
+            res.cookie('user', result.success.jwt, { secure: true, sameSite: 'none' });
             res.send(result);
         });
     }
