@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useCookies } from "react-cookie";
 
 import { TextInput } from "./textInput";
 import { doLogin } from "../../api";
