@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 
 export function Logout() {
   const [_, setCookie] = useCookies(["user"]);
-  setCookie("user", "");
+  setCookie("user", "", {path: '/'});
   window.location.href = "/pg6301-2024-konte-Slenderman00";
   return <></>;
 }
