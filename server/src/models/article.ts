@@ -32,7 +32,7 @@ const articleSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 export const article = mongoose.model("article", articleSchema);

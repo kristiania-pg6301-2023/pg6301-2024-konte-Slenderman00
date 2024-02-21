@@ -9,10 +9,15 @@ import { useParams } from "react-router-dom";
 import { AuthorSection } from "./components/authorSection";
 import { RecommendedArticles } from "./components/recommendedArticles";
 
-
 function Article() {
   const { id } = useParams();
-  const [article, setArticle] = useState({ title: "", content: "", authorName: "", authorBio: "", authorImage: ""});
+  const [article, setArticle] = useState({
+    title: "",
+    content: "",
+    authorName: "",
+    authorBio: "",
+    authorImage: "",
+  });
 
   useEffect(() => {
     getArticle(id as any, (result: any) => {
@@ -25,8 +30,12 @@ function Article() {
       <Navbar currentRoute="/article"></Navbar>
       <ArticleTitle>{article.title}</ArticleTitle>
       <ArticleText>{article.content}</ArticleText>
-      <AuthorSection name={article.authorName} bio={article.authorBio}  picture={article.authorImage}/>
-      <RecommendedArticles/>
+      <AuthorSection
+        name={article.authorName}
+        bio={article.authorBio}
+        picture={article.authorImage}
+      />
+      <RecommendedArticles />
     </Grid>
   );
 }

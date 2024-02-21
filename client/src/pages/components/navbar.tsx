@@ -36,7 +36,11 @@ function Navbar(props: any) {
   return (
     <div className="navbar-container">
       <div className="sub-container">
-        <NavbarButton href="/pg6301-2024-konte-Slenderman00/" name="HOME" isActive={currentRoute === "/"} />
+        <NavbarButton
+          href="/pg6301-2024-konte-Slenderman00/"
+          name="HOME"
+          isActive={currentRoute === "/"}
+        />
         <NavbarButton
           href="/pg6301-2024-konte-Slenderman00/news"
           name="NEWS"
@@ -52,7 +56,11 @@ function Navbar(props: any) {
               name={username}
               isActive={currentRoute === "/profile"}
             />
-            <NavbarButton href="/pg6301-2024-konte-Slenderman00/logout" name="LOGOUT" isActive={false} />
+            <NavbarButton
+              href="/pg6301-2024-konte-Slenderman00/logout"
+              name="LOGOUT"
+              isActive={false}
+            />
           </>
         ) : (
           <>

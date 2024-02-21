@@ -15,7 +15,7 @@ function Articles() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    getArticles(setArticles)
+    getArticles(setArticles);
   }, []);
 
   const admin =
@@ -39,17 +39,17 @@ function Articles() {
         <></>
       )}
       <ArticleGrid>
-        {
-            articles.map((article: any, index: number) => {
-                return (<Listing
-                id={article.id}
-                title={article.title}
-                img={article.image}
-                category={article.category}
-                key={index}
-              />)
-            })
-        }
+        {articles.map((article: any, index: number) => {
+          return (
+            <Listing
+              id={article.id}
+              title={article.title}
+              img={article.image}
+              category={article.category}
+              key={index}
+            />
+          );
+        })}
       </ArticleGrid>
     </Grid>
   );

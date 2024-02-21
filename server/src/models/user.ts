@@ -26,14 +26,14 @@ const userSchema = new mongoose.Schema(
       default: "https://placehold.jp/150x150.png",
     },
     bio: {
-        type: String,
-        default: '',
-        max: 500,
-    }
+      type: String,
+      default: "",
+      max: 500,
+    },
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 export const user = mongoose.model("user", userSchema);
@@ -48,11 +48,10 @@ export function getUserByName(username: String) {
 }
 
 export function getUserByUUID(uuid: String) {
-    return user
-      .findOne({ uuid: uuid })
-      .then((user: any) => user)
-      .catch((error) => {
-        throw error;
-      });
-  }
-  
+  return user
+    .findOne({ uuid: uuid })
+    .then((user: any) => user)
+    .catch((error) => {
+      throw error;
+    });
+}
