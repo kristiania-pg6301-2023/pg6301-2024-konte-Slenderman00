@@ -5,3 +5,4 @@ The a github pages running the frontend can be found [here](https://joar.me/pg63
 ---
 The backend of the service runs here [	the-flat-earther-tribune-e93e502a5a83.herokuapp.com](	the-flat-earther-tribune-e93e502a5a83.herokuapp.com)
 ---
+[![coverage](https://github.com/Slenderman00/pg6301-2024-konte-Slenderman00/actions/workflows/coverage.yml/badge.svg)](https://github.com/Slenderman00/pg6301-2024-konte-Slenderman00/actions/workflows/coverage.yml)
