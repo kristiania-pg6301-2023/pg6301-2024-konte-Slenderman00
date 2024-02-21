@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useCookies } from "react-cookie";
 
 import { TextInput } from "./textInput";
 import { doRegister } from "../../api";
@@ -10,6 +11,8 @@ export function RegisterBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const [_, setCookie] = useCookies(["user"]);
+
   const onSubmit = (event: any) => {
     //this makes the user able to interact with this as a normal form.
     event.preventDefault();
@@ -19,6 +22,7 @@ export function RegisterBox() {
       console.log(result);
       if ("success" in result) {
         console.log(parseJwt(result.success.jwt));
+        setCookie("user", result.success.jwt, { path: "/" });
         //redirect the user to the index
         window.location.href = "/pg6301-2024-konte-Slenderman00/";
       } else {
