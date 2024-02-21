@@ -1,4 +1,4 @@
-const ENDPOINT = "https://the-flat-earther-tribune-e93e502a5a83.herokuapp.com";
+const ENDPOINT = import.meta.env.REACT_API || "http://localhost:3000";
 
 function postData(path: string, data: any, callback: any) {
   fetch(`${ENDPOINT}${path}`, {
