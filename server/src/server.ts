@@ -53,8 +53,13 @@ const loginRouter = express.Router();
 loginRouter.post('/', (req, res) => {
     if("username" in req.body && "password" in req.body) {
         loginUser(req.body.username, req.body.password, (result: any) => {
-            res.cookie('user', result.success.jwt, { secure: true, sameSite: 'none' });
-            res.send(result);
+            if('error' in result) {
+                res.status(409);
+                res.send(result);
+            } else {
+                res.cookie('user', result.success.jwt, { secure: true, sameSite: 'none' });
+                res.send(result);
+            }
         })
     }
 });
@@ -64,8 +69,13 @@ registerRouter.post('/', (req, res) => {
     if("username" in req.body && "password" in req.body) {
         //all fields have been submitted
         registerUser(req.body.username, req.body.password, (result: any) => {
-            res.cookie('user', result.success.jwt, { secure: true, sameSite: 'none' });
-            res.send(result);
+            if('error' in result) {
+                res.status(409);
+                res.send(result);
+            } else {
+                res.cookie('user', result.success.jwt, { secure: true, sameSite: 'none' });
+                res.send(result);
+            }
         });
     }
 });
@@ -79,6 +89,9 @@ articleRouter.post('/create', (req: any, res) => {
     if(req.user.role == 1) {
         if("title" in req.body && "content" in req.body && "category" in req.body && "imgurl" in req.body) {
             createArticle(req.body.title, req.body.content, req.body.category, req.body.imgurl, req.user.uuid, (result: any) => {
+                if('error' in result) {
+                    res.status(409);
+                }
                 res.send(result);
             })
         }
