@@ -24,7 +24,7 @@ export function LoginBox() {
         console.log(parseJwt(result.success.jwt));
         setCookie("user", result.success.jwt, { path: "/" });
         //redirect the user to the index
-        window.location.href = "/";
+        window.location.href = "/pg6301-2024-konte-Slenderman00/";
       }
     });
   };

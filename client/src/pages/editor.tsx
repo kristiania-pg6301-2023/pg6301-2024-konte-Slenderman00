@@ -55,7 +55,7 @@ function Editor() {
             createNewArticle(title, content, category, image, (result: any) => {
                 console.log(result);
                 if('success' in result) {
-                    document.location.href = `/article/${result.success.uaid}`
+                    document.location.href = `/pg6301-2024-konte-Slenderman00/article/${result.success.uaid}`
                 } else {
                     alert(result.error)
                 }
@@ -63,7 +63,7 @@ function Editor() {
         } else {
             updateArticle(title, content, category, image, (id as any), (result: any) => {
                 if('success' in result) {
-                    document.location.href = `/article/${id}`
+                    document.location.href = `/pg6301-2024-konte-Slenderman00/article/${id}`
                 } else {
                     alert(result.error)
                 }
