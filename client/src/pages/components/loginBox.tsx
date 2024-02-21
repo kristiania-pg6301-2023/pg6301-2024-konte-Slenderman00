@@ -11,8 +11,6 @@ export function LoginBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const [_, setCookie] = useCookies(["user"]);
-
   const onSubmit = (event: any) => {
     //this makes the user able to interact with this as a normal form.
     event.preventDefault();
