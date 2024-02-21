@@ -1,7 +1,5 @@
-import './roundImage.css';
+import "./roundImage.css";
 
 export function RoundImage(props: any) {
-    return (
-        <img className="round" src={props.src}/>
-    )
+  return <img className="round" src={props.src} />;
 }

@@ -39,7 +39,7 @@ export function doLogin(username: string, password: string, callback: any) {
     { username: username, password: password },
     (result: any) => {
       callback(result);
-    }
+    },
   );
 }
 
@@ -49,7 +49,7 @@ export function doRegister(username: string, password: string, callback: any) {
     { username: username, password: password },
     (result: any) => {
       callback(result);
-    }
+    },
   );
 }
 
@@ -58,14 +58,14 @@ export function createNewArticle(
   content: string,
   category: string,
   imgurl: string,
-  callback: any
+  callback: any,
 ) {
   postData(
     "/api/article/create",
     { title: title, content: content, category: category, imgurl: imgurl },
     (result: any) => {
       callback(result);
-    }
+    },
   );
 }
 
@@ -75,7 +75,7 @@ export function updateArticle(
   category: string,
   imgurl: string,
   id: string,
-  callback: any
+  callback: any,
 ) {
   postData(
     "/api/article/update",
@@ -88,7 +88,7 @@ export function updateArticle(
     },
     (result: any) => {
       callback(result);
-    }
+    },
   );
 }
 
@@ -105,13 +105,17 @@ export function getArticle(id: string, callback: any) {
 }
 
 export function getProfileData(callback: any) {
-    getData("/api/profile", (result: any) => {
-        callback(result);
-    });
+  getData("/api/profile", (result: any) => {
+    callback(result);
+  });
 }
 
 export function updateProfileData(bio: string, picture: string, callback: any) {
-    postData("/api/profile/update", {bio: bio, picture: picture}, (result: any) => {
-        callback(result);
-    });
+  postData(
+    "/api/profile/update",
+    { bio: bio, picture: picture },
+    (result: any) => {
+      callback(result);
+    },
+  );
 }

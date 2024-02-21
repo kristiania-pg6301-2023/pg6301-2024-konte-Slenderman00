@@ -27,5 +27,5 @@ describe("GET /", () => {
 });
 
 afterAll(async () => {
-    db.close(true)
+  db.close(true);
 });

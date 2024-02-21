@@ -15,18 +15,18 @@ export function RecommendedArticles() {
   }, []);
 
   return (
-      <ArticleGrid>
-        {articles.map((article: any, index: number) => {
-          return (
-            <Listing
-              id={article.id}
-              title={article.title}
-              img={article.image}
-              category={article.category}
-              key={index}
-            />
-          );
-        })}
-      </ArticleGrid>
+    <ArticleGrid>
+      {articles.map((article: any, index: number) => {
+        return (
+          <Listing
+            id={article.id}
+            title={article.title}
+            img={article.image}
+            category={article.category}
+            key={index}
+          />
+        );
+      })}
+    </ArticleGrid>
   );
 }

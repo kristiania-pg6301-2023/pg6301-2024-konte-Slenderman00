@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './index.css'
+import "./index.css";
 
 import Home from "./pages/home";
 import Login from "./pages/login";
@@ -15,21 +15,19 @@ function App() {
     <>
       <BrowserRouter basename="/pg6301-2024-konte-Slenderman00">
         <Routes>
-          <Route index element={<Home/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/logout" element={<Logout/>}/>
-          <Route path="/news" element={<Articles/>}/>
-          <Route path="/editor/:id" element={<Editor/>}/>
-          <Route path="/article/:id" element={<Article/>}/>
-          <Route path="/profile" element={<Profile/>}/>
+          <Route index element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/news" element={<Articles />} />
+          <Route path="/editor/:id" element={<Editor />} />
+          <Route path="/article/:id" element={<Article />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
-      <div className="footer">
-
-      </div>
+      <div className="footer"></div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
