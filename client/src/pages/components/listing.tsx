@@ -33,6 +33,9 @@ export function Listing(props: any) {
       >
         <div className="atitle">{props.title}</div>
         <img className="image" src={props.img} />
+        <div className="category">
+            {props.category}
+        </div>
       </div>
       {admin ? <EditButton id={props.id} /> : <></>}
     </div>

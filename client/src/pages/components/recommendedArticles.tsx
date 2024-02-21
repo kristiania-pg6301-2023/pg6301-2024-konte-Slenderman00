@@ -22,6 +22,7 @@ export function RecommendedArticles() {
               id={article.id}
               title={article.title}
               img={article.image}
+              category={article.category}
               key={index}
             />
           );
