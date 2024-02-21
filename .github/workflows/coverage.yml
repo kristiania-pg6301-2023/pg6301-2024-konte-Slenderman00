@@ -1,11 +1,17 @@
 name: 'coverage'
 on:
-    push:
-        branches:
-        - main
+  push:
+    branches:
+      - main
 jobs:
-    coverage:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - uses: ArtiomTr/jest-coverage-report-action@v2
+  coverage:
+    runs-on: ubuntu-latest
+    env:  
+        MONGODB_ADDRESS: ${{secrets.MONGODB_ADDRESS}}
+        MONGODB_USERNAME: "admin"
+        MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+            test-script: npm test

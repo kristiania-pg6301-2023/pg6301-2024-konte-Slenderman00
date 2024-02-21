@@ -6,11 +6,14 @@
     "dev": "nodemon src/server.ts",
     "build": "npx tsc",
     "start": "node dist/src/server.js",
-    "test": "jest"
+    "test": "jest --forceExit"
   },
   "jest": {
     "preset": "ts-jest",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "setupFiles": [
+      "../secret.env"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -31,6 +34,7 @@
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.19",
     "@types/supertest": "^6.0.2",
+    "dotenv-flow": "^4.1.0",
     "jest": "^29.7.0",
     "supertest": "^6.3.4",
     "ts-jest": "^29.1.2",
