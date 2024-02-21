@@ -22,9 +22,10 @@ export function RegisterBox() {
       console.log(result);
       if ("success" in result) {
         console.log(parseJwt(result.success.jwt));
-        setCookie("user", result.success.jwt, { path: "/", sameSite: "none", secure: true });
         //redirect the user to the index
         window.location.href = "/pg6301-2024-konte-Slenderman00/";
+      } else {
+        alert(result.error)
       }
     });
   };
