@@ -2,7 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import http from 'http';
+import http from "http";
 
 import registerUser from "./secureUserSystem/register";
 import loginUser from "./secureUserSystem/login";
@@ -186,19 +186,16 @@ apiRouter.use("/profile", profileRouter);
 
 app.use("/api", apiRouter);
 
-db.on('error', (error) => {
-    //onsole.error('MongoDB connection error:', error);
+db.on("error", (error) => {
+  //onsole.error('MongoDB connection error:', error);
 });
-
-
 
 //express is only started when mongodb has established a connection to the server
-db.once('open', () => {
-    //console.log('MongoDB connection successful, starting application server');
-    app.listen(port, () => {
-        //console.log(`Server is listening on port ${port}`);
-    });
+db.once("open", () => {
+  //console.log('MongoDB connection successful, starting application server');
+  app.listen(port, () => {
+    //console.log(`Server is listening on port ${port}`);
+  });
 });
 
-
-export { app, db }; 
+export { app, db };

@@ -1,4 +1,3 @@
-
 import { generateToken, verifyToken } from "../src/secureUserSystem/jwtUtils";
 import { app, db } from "../src/server";
 const request = require("supertest");
@@ -28,5 +27,5 @@ describe("GET /", () => {
 });
 
 afterAll(async () => {
-    db.close(true)
+  db.close(true);
 });
