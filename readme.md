@@ -6,3 +6,6 @@ The a github pages running the frontend can be found [here](https://joar.me/pg63
 The backend of the service runs here [	the-flat-earther-tribune-e93e502a5a83.herokuapp.com](	the-flat-earther-tribune-e93e502a5a83.herokuapp.com)
 ---
 [![coverage](https://github.com/Slenderman00/pg6301-2024-konte-Slenderman00/actions/workflows/coverage.yml/badge.svg)](https://github.com/Slenderman00/pg6301-2024-konte-Slenderman00/actions/workflows/coverage.yml)
+
+---
+i did not manage to get jest-coverage-report-action running on github actions, but i managed to get alot of other actions running on this repo: https://github.com/Slenderman00/pg6301-2024-konte-Slenderman00/tree/main
