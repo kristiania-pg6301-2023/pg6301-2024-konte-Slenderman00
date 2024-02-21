@@ -13,7 +13,7 @@ import Profile from "./pages/profile";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/pg6301-2024-konte-Slenderman00">
         <Routes>
           <Route index element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
