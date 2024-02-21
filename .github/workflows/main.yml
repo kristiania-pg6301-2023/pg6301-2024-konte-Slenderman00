@@ -28,12 +28,6 @@ jobs:
           name: production-files
           path: ./client/dist
 
-      - name: copy file
-        uses: canastro/copy-file-action@master
-        with:
-          source: "./client/dist/index.html"
-          target: "./client/dist/404.html"
-
   deploy:
     name: Deploy
     needs: build
