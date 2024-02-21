@@ -52,6 +52,7 @@ apiRouter.get("/", (req, res) => {
 });
 
 const loginRouter = express.Router();
+
 loginRouter.post("/", (req, res) => {
   if ("username" in req.body && "password" in req.body) {
     loginUser(req.body.username, req.body.password, (result: any) => {
@@ -83,6 +84,7 @@ const articleRouter = express.Router();
 
 //note cookieman verifies the server signed jwt, thus all token data should be trustworthy
 articleRouter.use(cookieMan);
+
 articleRouter.post("/create", (req: any, res) => {
   if (req.user.role == 1) {
     if (
